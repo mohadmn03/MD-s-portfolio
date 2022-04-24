@@ -421,11 +421,6 @@ h1 {
   padding-right: 30px;
 }
 
-.about_skills .about-me {
-  border-right: 1px solid red;
-  background-color: green;
-}
-
 .about_skills .about-me .wai {
   margin-bottom: 30px;
 }
@@ -447,17 +442,40 @@ h1 {
   background-color: #239379;
   padding: 0px;
   border-top-right-radius: 50%;
-  -webkit-animation: right-and-left 2s linear infinite;
-          animation: right-and-left 2s linear infinite;
+  -webkit-animation: top-and-bottom 2s linear infinite;
+          animation: top-and-bottom 2s linear infinite;
 }
 
-@keyframes right-and-left {
+@-webkit-keyframes top-and-bottom {
   0%,
   100% {
     top: calc(100% + 2px);
   }
   50% {
     top: 100%;
+  }
+}
+
+@keyframes top-and-bottom {
+  0%,
+  100% {
+    top: calc(100% + 2px);
+  }
+  50% {
+    top: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .about_skills .about-me .wai h2 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about_skills .about-me .wai h2::before {
+    width: 60%;
   }
 }
 
@@ -484,17 +502,30 @@ h1 {
   background-color: #239379;
   padding: 0px;
   border-top-right-radius: 50%;
-  -webkit-animation: right-and-left 2s linear infinite;
-          animation: right-and-left 2s linear infinite;
+  -webkit-animation: top-and-bottom 2s linear infinite;
+          animation: top-and-bottom 2s linear infinite;
 }
 
-@keyframes right-and-left {
+@keyframes top-and-bottom {
   0%,
   100% {
     top: calc(100% + 2px);
   }
   50% {
     top: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .about_skills .about-me .my-passions h2 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about_skills .about-me .my-passions h2::before {
+    width: 60%;
   }
 }
 
@@ -532,11 +563,11 @@ h1 {
   background-color: #239379;
   padding: 0px;
   border-top-right-radius: 50%;
-  -webkit-animation: right-and-left 2s linear infinite;
-          animation: right-and-left 2s linear infinite;
+  -webkit-animation: top-and-bottom 2s linear infinite;
+          animation: top-and-bottom 2s linear infinite;
 }
 
-@keyframes right-and-left {
+@keyframes top-and-bottom {
   0%,
   100% {
     top: calc(100% + 2px);
@@ -546,7 +577,26 @@ h1 {
   }
 }
 
-.about_skills .skills-boxs {
+@media (min-width: 768px) and (max-width: 991px) {
+  .about_skills .skills h2 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about_skills .skills h2::before {
+    width: 60%;
+  }
+}
+
+.about_skills .skills-box h4 {
+  font-size: 20px;
+  color: #f96250ba;
+  font-weight: 800;
+}
+
+.about_skills .skills-box .unow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -554,14 +604,12 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 70px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   gap: 20px;
 }
 
-.about_skills .skills-boxs .skill {
+.about_skills .skills-box .unow .skill {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -570,11 +618,11 @@ h1 {
           align-items: center;
 }
 
-.about_skills .skills-boxs .skill img {
-  margin-right: 5px;
+.about_skills .skills-box .unow .skill img {
+  margin-right: 15px;
 }
 
-.about_skills .skills-boxs .skill-name {
+.about_skills .skills-box .unow .skill-name {
   height: 24px;
   width: 400px;
   background-color: #eee;
@@ -582,30 +630,343 @@ h1 {
   overflow: hidden;
 }
 
-.about_skills .skills-boxs .skill-name .progress {
-  width: 50%;
+.about_skills .skills-box .unow .skill-name .progress {
+  width: 0;
   height: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-.about_skills .skills-boxs .skill-name .progress.html {
+.about_skills .skills-box .unow .skill-name .progress.html {
   background-color: #e44d27;
 }
 
-.about_skills .skills-boxs .skill-name .progress.css {
+.about_skills .skills-box .unow .skill-name .progress.css {
   background-color: #1f62ae;
 }
 
-.about_skills .skills-boxs .skill-name .progress.sass {
+.about_skills .skills-box .unow .skill-name .progress.sass {
   background-color: #cf649a;
 }
 
-.about_skills .skills-boxs .skill-name .progress.js {
+.about_skills .skills-box .unow .skill-name .progress.js {
   background-color: #f0db4f;
 }
 
-.about_skills .skills-boxs .skill-name .progress.react {
+.about_skills .skills-box .unow .skill-name .progress.react {
   background-color: #61dafb;
 }
 
+.about_skills .skills-box .other-sk {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about_skills .skills-box .languages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about_skills .skills-box .languages .lo {
+  position: relative;
+}
+
+.about_skills .skills-box .languages .lo span {
+  position: absolute;
+  width: 100px;
+  top: 10px;
+  left: 41px;
+}
+
+@media (max-width: 767px) {
+  .about_skills {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about_skills .about-me,
+  .about_skills .skills {
+    width: 100%;
+  }
+  .about_skills .about-me .wai,
+  .about_skills .about-me .my-passions,
+  .about_skills .about-me .pass-box {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about_skills .skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 50px;
+    text-align: center;
+  }
+  .about_skills .skills-box.first .skill-name {
+    width: 300px;
+  }
+  .about_skills .skills-box.two {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about_skills .skills-box.two .other-sk {
+    gap: 50px;
+  }
+  .about_skills .skills-box.three {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about_skills .skills-box.three .languages {
+    gap: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .about_skills {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about_skills .about-me,
+  .about_skills .skills {
+    width: 100%;
+  }
+  .about_skills .about-me .wai,
+  .about_skills .about-me .my-passions,
+  .about_skills .about-me .pass-box {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about_skills .skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 50px;
+    text-align: center;
+  }
+  .about_skills .skills-box.two {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about_skills .skills-box.three {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 /*end about me*/
+/*start wroks*/
+.works {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.works h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+.works h2::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 1%;
+  width: 20%;
+  height: 20%;
+  background-color: #239379;
+  padding: 0px;
+  border-top-right-radius: 50%;
+  -webkit-animation: top-and-bottom 2s linear infinite;
+          animation: top-and-bottom 2s linear infinite;
+}
+
+@keyframes top-and-bottom {
+  0%,
+  100% {
+    top: calc(100% + 2px);
+  }
+  50% {
+    top: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .works h2 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .works h2::before {
+    width: 60%;
+  }
+}
+
+.works .container .works-boxs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+}
+
+.works .container .works-boxs .box {
+  -webkit-box-shadow: 0px 0px 8px 0px #f3afa8, 0px 0px 8px 0px #f3afa8;
+          box-shadow: 0px 0px 8px 0px #f3afa8, 0px 0px 8px 0px #f3afa8;
+  width: 500px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.works .container .works-boxs .box img {
+  max-width: 100%;
+}
+
+.works .container .works-boxs .box .details h3 {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  letter-spacing: 10px;
+  font-weight: 400;
+}
+
+.works .container .works-boxs .box .details .tech {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.works .container .works-boxs .box .details .tech img {
+  width: 40px;
+  height: 40px;
+}
+
+.works .container .works-boxs .box .details .links {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.works .container .works-boxs .box .details .links a {
+  color: #009379;
+  padding: 10px 20px;
+  border: 2px solid #009379;
+  border-radius: 5px;
+  text-align: center;
+  width: 150px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.works .container .works-boxs .box .details .links a:hover {
+  color: #ffffff;
+  background-color: #009379;
+}
+
+/*end wroks*/
 /*# sourceMappingURL=portfolio.css.map */

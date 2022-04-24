@@ -53,6 +53,16 @@
   padding-top: $top;
   padding-bottom: $bottom;
 }
+//left right margin
+@mixin lrmargin($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+//top bottom margin
+@mixin tbmargin($top, $bottom) {
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
 //p description
 @mixin description() {
   font-style: normal;
@@ -77,8 +87,8 @@
     background-color: #239379;
     padding: 0px;
     border-top-right-radius: 50%;
-    animation: right-and-left 2s linear infinite;
-    @keyframes right-and-left {
+    animation: top-and-bottom 2s linear infinite;
+    @keyframes top-and-bottom {
       0%,
       100% {
         top: calc(100% + 2px);
@@ -88,9 +98,22 @@
       }
     }
   }
+  @include breakpoints(small) {
+    width: fit-content;
+    @include lrmargin(auto, auto);
+    &::before {
+      width: 60%;
+    }
+  }
 }
 //paragraphs
 @mixin paragraphDescription {
   line-height: 2;
   color: $blackT;
+}
+//
+@mixin columns() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

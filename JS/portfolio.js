@@ -8,3 +8,18 @@ setInterval(() => {
   randomNumber = Math.floor(Math.random() * colors.length);
   introText.style.color = colors[randomNumber];
 }, 1500);
+//skills
+let aboutskillsSection = document.querySelector(".about_skills");
+let progresses = document.querySelectorAll(".progress");
+window.addEventListener("scroll", (event) => {
+  if (window.scrollY > aboutskillsSection.offsetTop - 100) {
+    progresses.forEach((progess) => {
+      progess.style.cssText = `width: ${progess.dataset.width}`;
+    });
+  } else if (window.scrollY < aboutskillsSection.offsetTop - 600) {
+    progresses.forEach((progess) => {
+      progess.style.width = 0;
+    });
+  }
+});
+//
