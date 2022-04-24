@@ -1,0 +1,46 @@
+@import "./mixins";
+@import "./colors_variables";
+//
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+//
+html {
+  scroll-behavior: smooth;
+}
+//
+body {
+  font-family: "Epilogue", sans-serif;
+  background-color: $white;
+}
+//
+ul {
+  list-style: none;
+}
+//
+a {
+  text-decoration: none;
+}
+//
+h1 {
+  margin: 0;
+}
+//
+.container {
+  @include lrpadding(30px, 30px);
+  margin: auto;
+  @include breakpoints(mobile) {
+    width: 100%;
+  }
+  @include breakpoints(small) {
+    width: 750px;
+  }
+  @include breakpoints(medium) {
+    width: 970px;
+  }
+  @include breakpoints(large) {
+    width: 1170px;
+  }
+}

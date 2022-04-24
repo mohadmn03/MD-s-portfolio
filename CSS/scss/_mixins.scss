@@ -1,0 +1,96 @@
+@import "./colors_variables";
+//
+//media queries
+@mixin breakpoints($point) {
+  @if ($point == mobile) {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if($point == small) {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if($point == medium) {
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if($point == large) {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+//centeringFlex
+@mixin centeringFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//centeringTransform
+@mixin centeringTransform {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+//wh
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+//same wh
+@mixin samewh($width) {
+  width: $width;
+  height: $width;
+}
+//left right padding
+@mixin lrpadding($left, $right) {
+  padding-left: $left;
+  padding-right: $right;
+}
+//top bottom padding
+@mixin tbpadding($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+//p description
+@mixin description() {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 27px;
+  color: $blackT;
+}
+//heading
+@mixin heading() {
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 1%;
+    width: 20%;
+    height: 20%;
+    background-color: #239379;
+    padding: 0px;
+    border-top-right-radius: 50%;
+    animation: right-and-left 2s linear infinite;
+    @keyframes right-and-left {
+      0%,
+      100% {
+        top: calc(100% + 2px);
+      }
+      50% {
+        top: 100%;
+      }
+    }
+  }
+}
+//paragraphs
+@mixin paragraphDescription {
+  line-height: 2;
+  color: $blackT;
+}

@@ -1,0 +1,315 @@
+@import "./scss/global_rules";
+@import "./scss/mixins";
+@import "./scss/colors_variables";
+//
+/*start header*/
+.header {
+  height: 100px;
+  .container {
+    @include centeringFlex;
+    justify-content: space-between;
+    .logo {
+      @include samewh(100px);
+    }
+    .links {
+      display: flex;
+      gap: 40px;
+      li {
+        a {
+          color: $black;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 17px;
+          transition: all 0.3s;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $green;
+            transition: all 0.3s;
+          }
+          &:hover {
+            color: $green;
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include breakpoints(mobile) {
+    height: 140px;
+    background-color: #eee;
+    .container {
+      .logo {
+        @include samewh(140px);
+      }
+      justify-content: center;
+      .links {
+        display: none;
+      }
+    }
+  }
+}
+/*end header*/
+/*start introduction*/
+.introduction {
+  height: calc(100vh - 100px);
+  @include centeringFlex;
+  justify-content: normal;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .informations {
+      h1 {
+        font-weight: 600;
+        font-size: 100px;
+        line-height: 0.9;
+        margin-bottom: 25px;
+        position: relative;
+        width: 400px;
+        &::before {
+          content: "";
+          position: absolute;
+          height: 4px;
+          background-color: $green;
+          width: 30%;
+          bottom: -8px;
+          left: 6px;
+          animation: right-and-left 3s linear infinite;
+          @keyframes right-and-left {
+            0%,
+            100% {
+              left: 0;
+            }
+            50% {
+              left: 100px;
+            }
+          }
+          @include breakpoints(mobile) {
+            @keyframes right-and-left {
+              50% {
+                left: 200px;
+              }
+            }
+          }
+          @include breakpoints(small) {
+            @keyframes right-and-left {
+              0%,
+              100% {
+                left: 0;
+              }
+              50% {
+                left: 380px;
+              }
+            }
+          }
+        }
+        @include breakpoints(mobile) {
+          width: 300px;
+          text-align: center;
+          font-size: 50px;
+        }
+        @include breakpoints(small) {
+          width: 550px;
+          text-align: center;
+          font-size: 70px;
+        }
+      }
+      p {
+        @include description;
+        margin-left: 6px;
+        @include breakpoints(mobile) {
+          text-align: center;
+        }
+        @include breakpoints(small) {
+          text-align: center;
+        }
+      }
+      @include breakpoints(mobile) {
+        margin-top: 50px;
+      }
+      @include breakpoints(small) {
+        margin-top: 50px;
+      }
+    }
+    .avatar {
+      position: relative;
+      @include samewh(400px);
+      &-img {
+        @include samewh(100%);
+        position: relative;
+        z-index: 2;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        @include wh(120px, 169px);
+        background-color: #009379;
+        border-top-right-radius: 60px;
+        border-top-left-radius: 300px;
+        @include breakpoints(mobile) {
+          left: 20px;
+          @include wh(50px, 140px);
+        }
+        z-index: 2;
+      }
+      .shape {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #ff6250;
+        border-top-right-radius: 100%;
+        border-bottom-left-radius: 10px;
+        z-index: 2;
+      }
+      .vector {
+        @include wh(200px, 80px);
+        position: absolute;
+        top: 280px;
+        right: 230px;
+        z-index: 2;
+        &-2 {
+          right: -20px;
+          transform: rotate(138deg);
+          top: 220px;
+        }
+        &-3 {
+          left: -30px;
+          transform: rotate(38deg);
+          top: 100px;
+        }
+        @include breakpoints(mobile) {
+          display: none;
+        }
+      }
+      @include breakpoints(mobile) {
+        & {
+          @include samewh(350px);
+        }
+      }
+      .derAvatar {
+        width: 350px;
+        height: 300px;
+        border-top-right-radius: 401px;
+        border-top-left-radius: 410px;
+        background-color: $pink;
+        position: absolute;
+        bottom: 3px;
+        z-index: 1;
+      }
+    }
+    @include breakpoints(mobile) {
+      & {
+        flex-direction: column-reverse;
+      }
+    }
+    @include breakpoints(small) {
+      & {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+/*end introduction*/
+/*start about me*/
+.about_skills {
+  display: flex;
+  min-height: auto;
+  @include tbpadding(30px, 30px);
+  .about-me,
+  .skills {
+    width: 50%;
+    max-height: 100%;
+    @include lrpadding(30px, 30px);
+  }
+  .about-me {
+    border-right: 1px solid red;
+    background-color: green;
+    .wai {
+      margin-bottom: 30px;
+      h2 {
+        @include heading;
+      }
+      p {
+        @include paragraphDescription;
+        width: 80%;
+      }
+    }
+    .my-passions {
+      h2 {
+        @include heading;
+      }
+      .pass-box {
+        margin-bottom: 20px;
+        h4 {
+          font-size: 20px;
+          margin-bottom: 10px;
+          color: #f96250ba;
+          font-weight: 800;
+        }
+        p {
+          @include paragraphDescription;
+          width: 80%;
+        }
+      }
+    }
+  }
+  .skills {
+    h2 {
+      @include heading;
+    }
+    &-boxs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 70px;
+      gap: 20px;
+      .skill {
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 5px;
+        }
+        &-name {
+          height: 24px;
+          width: 400px;
+          background-color: #eee;
+          border-radius: 6px;
+          overflow: hidden;
+          .progress {
+            width: 50%;
+            height: 100%;
+            &.html {
+              background-color: $html;
+            }
+            &.css {
+              background-color: $css;
+            }
+            &.sass {
+              background-color: $sass;
+            }
+            &.js {
+              background-color: $js;
+            }
+            &.react {
+              background-color: $react;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*end about me*/
