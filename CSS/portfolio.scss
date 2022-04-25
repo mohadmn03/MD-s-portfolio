@@ -78,7 +78,7 @@
           content: "";
           position: absolute;
           height: 4px;
-          background-color: $green;
+          background-color: currentColor;
           width: 30%;
           bottom: -8px;
           left: 6px;
@@ -424,7 +424,8 @@
   .container {
     .works-boxs {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      justify-items: center;
       gap: 100px;
       .box {
         box-shadow: 0px 0px 8px 0px $pink, 0px 0px 8px 0px $pink;
@@ -466,6 +467,7 @@
               width: 150px;
               font-weight: bold;
               transition: $main-transition;
+              cursor: pointer;
               &:hover {
                 color: $white;
                 background-color: #009379;
@@ -474,7 +476,222 @@
           }
         }
       }
+      @include breakpoints(mobile) {
+        & {
+          grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+          gap: 60px;
+          .box {
+            width: 100%;
+          }
+        }
+      }
+      @include breakpoints(small) {
+        & {
+          .box {
+            width: 100%;
+          }
+        }
+      }
+      @include breakpoints(medium) {
+        & {
+          .box {
+            width: 430px;
+          }
+        }
+      }
     }
   }
 }
 /*end wroks*/
+/*start contact*/
+.contact {
+  @include tbpadding(30px, 30px);
+  .container {
+    h2 {
+      @include heading;
+      @include breakpoints(mobile) {
+        & {
+          width: fit-content;
+          @include lrmargin(auto, auto);
+          &::before {
+            width: 60%;
+          }
+        }
+      }
+    }
+    .par {
+      margin-top: 90px;
+      display: flex;
+      .contact-details {
+        padding: 40px;
+        width: 50%;
+        .chap {
+          p {
+            color: black;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: 200;
+            @include breakpoints(medium) {
+              width: 300px;
+            }
+          }
+        }
+      }
+      .contact-form {
+        padding: 40px;
+        width: 50%;
+        form {
+          display: flex;
+          flex-direction: column;
+          input:not(:last-child),
+          textarea {
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: none;
+            background-color: #eee;
+            &:focus {
+              outline: none;
+            }
+          }
+          textarea {
+            width: 100%;
+            height: 200px;
+          }
+          input[type="submit"] {
+            background-color: $black;
+            color: $white;
+            padding: 18px 23px;
+            width: fit-content;
+            border-radius: 4px;
+            border: none;
+            margin-left: auto;
+            transition: $main-transition;
+            cursor: pointer;
+            &:hover {
+              background-color: black;
+            }
+          }
+        }
+      }
+      @include breakpoints(mobile) {
+        & {
+          flex-direction: column;
+          margin-top: 50px;
+          .contact-details {
+            width: 100%;
+            text-align: center;
+          }
+          .contact-form {
+            width: 100%;
+          }
+        }
+      }
+      @include breakpoints(small) {
+        & {
+          flex-direction: column;
+          margin-top: 50px;
+          .contact-details {
+            width: 100%;
+          }
+          .contact-form {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+/*end contact*/
+/*start footer*/
+.footer {
+  @include tbpadding(40px, 40px);
+  text-align: center;
+  background-color: #eee;
+  position: relative;
+  h3 {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 6px;
+  }
+  p {
+    @include tbmargin(15px, 20px);
+    font-weight: 200;
+    @include breakpoints(mobile) {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+  .socials {
+    @include centeringFlex;
+    gap: 10px;
+    a {
+      color: $black;
+      transition: $main-transition;
+      i {
+        font-size: 25px;
+      }
+      &:hover {
+        transform: translateY(-3px);
+        &.facebook {
+          color: rgb(0, 89, 255);
+        }
+        &.instagram {
+          color: #cc109b;
+        }
+        &.linkedin {
+          color: rgb(0, 123, 255);
+        }
+        &.whatsapp {
+          color: rgb(0, 216, 40);
+        }
+        &.guthub {
+          color: rgb(0, 89, 255);
+        }
+        &.twitter {
+          color: rgb(0, 157, 255);
+        }
+      }
+    }
+  }
+}
+/*end footer*/
+//
+.foverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: $black, $alpha: 0.7);
+  width: 100%;
+  height: 100%;
+}
+.number {
+  @include centeringTransform;
+  background-color: White;
+  width: 60%;
+  height: 30%;
+  @include centeringFlex;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #00a400;
+  color: white;
+}
+.wi {
+  height: 22px;
+  margin-right: 3px;
+}
+.wn {
+}
+.close {
+  background-color: $black;
+  color: $white;
+  @include samewh(20px);
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  font-size: 12px;
+  right: -10px;
+  text-align: center;
+  line-height: 22px;
+  cursor: pointer;
+}
