@@ -1,2 +1,12 @@
 # Personal Portfolio
- In progress ...
+
+
+# Direct link: https://mohadmn-s-portfolio.netlify.app/
+
+
+
+
+TECH STACK:
+- HTML
+- CSS & SCSS
+- JAVASCRIPT
