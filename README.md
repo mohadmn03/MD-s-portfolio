@@ -5,7 +5,6 @@
 
 
 
-
 TECH STACK:
 - HTML
 - CSS & SCSS
