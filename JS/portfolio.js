@@ -22,8 +22,8 @@ window.addEventListener("scroll", (event) => {
     });
   }
 });
-//latest work
-//random images
+// latest work
+// random images
 let demmaneBox = document.querySelector(".demmane img");
 let demmaneArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 let buddytreeBox = document.querySelector(".buddytree img");
@@ -36,12 +36,14 @@ function random(myArray) {
 //
 setInterval(() => {
   let randomNumOne = random(demmaneArray);
-  demmaneBox.src = `../images/randomImgs/demmane/demmane${demmaneArray[randomNumOne]}.png`;
+  // demmaneBox.src = `../images/randomImgs/demmane/demmane${demmaneArray[randomNumOne]}.png`;
+  demmaneBox.src = `../images/demmane${demmaneArray[randomNumOne]}.png`;
   //
   let randomNumTwo = random(buddytreeArray);
-  buddytreeBox.src = `../images/randomImgs/buddytree/buddytree${buddytreeArray[randomNumTwo]}.png`;
+  // buddytreeBox.src = `../images/randomImgs/buddytree/buddytree${buddytreeArray[randomNumTwo]}.png`;
+  buddytreeBox.src = `../images/buddytree${buddytreeArray[randomNumTwo]}.png`;
 }, 3000);
-//
+
 let footer = document.querySelector(".footer");
 footer.onclick = (e) => e.stopPropagation();
 let whatsapp = document.querySelector(".whatsapp");
@@ -75,3 +77,4 @@ whatsapp.addEventListener("click", (event) => {
     number.remove();
   });
 });
+//
